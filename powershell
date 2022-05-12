@@ -1,0 +1,15 @@
+#Istarted off uninstalling all my OpenSSH so that i will struggle the whole way
+first verify uou have Open SSH 
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+
+Then lets install OpenSHH, if bot the cliet and server are intalled skip this part. 
+# Install the OpenSSH Client
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+Restart required
+# Install the OpenSSH Server
+# Install the OpenSSH Client
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+
+# Install the OpenSSH Server
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Here you may get and error if so we gonna install it via GUI
