@@ -1,0 +1,5 @@
+#Once you have installed Chocolately and you need to be able to run dig command in Powershell you can install BIND which will then let you. 
+#Must be done in Admin. 
+  choco install bind-toolsonly
+  
+  Eample:  dig amazon.com
