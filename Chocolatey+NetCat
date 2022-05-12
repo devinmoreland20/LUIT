@@ -1,0 +1,6 @@
+#This is a way to install nc or NetCat on to Windows Powershell. Must run PowerShell as Admin. 
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco install netcat
+                                        cmd     ip      port
+#Now you can run the 'nc' command. ie. > nc 10.0.1.0/24 22
