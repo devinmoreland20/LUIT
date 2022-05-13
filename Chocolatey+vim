@@ -1,4 +1,5 @@
 #To install vim on Powershell via Chocolatey. Per request of Dan.
+#Run PS as Admin
 #First install Chocolatey
 
 choco install vim
