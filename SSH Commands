@@ -1,0 +1,15 @@
+#A complied list of SSH commands for Linux, they work for Powershell mostly. 
+
+#Linux
+#This will allow you to ssh into an instance. 
+ssh "username"@"IPaddress" 
+
+#This will allow you to ssh into an instance if it requires a keypair and the KP is on your system. 
+ssh -i "username"@"IPaddress"
+
+#This will add your KP to the system so you no longer have to enter it everytime you SSH. 
+ssh-add "keypair.pem" 
+
+#This will add you KP to the next instance if you ssh into one instance and then into another. 
+ssh -A "username"@"IPaddress"
+
