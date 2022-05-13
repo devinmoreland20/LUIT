@@ -1,0 +1,4 @@
+#How to install the AWS CLI via Chocolatey. 
+#Must run PS and Admin
+
+choco install awscli
