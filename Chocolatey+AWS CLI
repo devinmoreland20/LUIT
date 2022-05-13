@@ -1,0 +1,3 @@
+#How to install the AWS CLI via Chocolatey 
+
+choco install awscli
