@@ -1,0 +1,12 @@
+#After assigned your user Full S3 Access role you can run the commmands. Or if you have AdminRights
+
+
+#Shows Buckets
+aws s3 ls
+
+#shows contents of a bucket
+aws s3 ls s3://bucketname
+
+#Create a presigned URL for s3 bucket with 60s TTL
+aws s3 presign s3://bucketname/filename --expires-in 60
+# will spit out an URL that you can go to that only lives for 60seconds. 
