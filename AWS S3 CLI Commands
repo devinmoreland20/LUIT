@@ -9,4 +9,7 @@ aws s3 ls s3://bucketname
 
 #Create a presigned URL for s3 bucket with 60s TTL
 aws s3 presign s3://bucketname/filename --expires-in 60
-# will spit out an URL that you can go to that only lives for 60seconds. 
+#will spit out an URL that you can go to that only lives for 60seconds. 
+
+#Copy a file on your machine to S3
+aws s3 ls cp <target file name> <s3://bucketname>
