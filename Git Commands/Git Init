@@ -1,0 +1,3 @@
+#Command to initialized a git repo, be in the directory you want to make your repo 
+
+git init
