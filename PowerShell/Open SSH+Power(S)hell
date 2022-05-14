@@ -1,0 +1,54 @@
+#I started off uninstalling my OpenSSH client and server so that I will struggle the whole way just like you. 
+ 
+ 
+#First verify you have Open SSH 
+    Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+#If both the client and server are installed skip to Line 24. 
+
+#To install OpenSHH Client, will require restart and update of PC
+    Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+
+
+#Install the OpenSSH Server
+    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+#Here you may get and error in red letters. Run the following if you do
+    Add-WindowsCapability -Online -Name "Msix.PackagingTool.Driver~~~~0.0.1.0
+#Restart+Update PC
+#If you restarted rerun the command at line 13. 
+
+#Then verify our serverices are workring 
+    Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+#If both are installed then follow the next steps. 
+
+#Now that OpenSSH client and server are both install we need to start our SSH services. 
+    Start-Service sshd
+    Set-Service -Name sshd -StartupType 'Automatic'      
+#This will make it start up automatically everytime we start Powershell
+#Next we will confirm firewall is configured. You will have to hit enter at the end. Input all the following text in as one command. 
+
+if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+    Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
+    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+} else {
+    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
+}
+
+
+#First we need to start ssh-agent. Start by seeing if the service is running.  
+    Get-Service ssh-agent
+
+#If stopped; run
+    Start-Service ssh-agent
+
+#If this gives you red letters+error then we need to start the service in the GUI. I don't know how to do it in Powershell. 
+#Type services in your search bar. Find OpenSSH Authentication and set Startup type to automatic. Click Apply
+#Then run 
+    Get-Service ssh-agent | Select StartType
+#Should say automatic.
+
+#Then start the ssh-agent
+    Start-Service ssh-agent
+
+#Then run ssh-add to add out key pair and you golden, make sure your path to the file is correct.
+    ssh-add KeyPair.pem
+
