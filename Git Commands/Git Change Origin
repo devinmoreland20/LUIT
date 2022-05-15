@@ -1,0 +1,7 @@
+#How to update a push and origin in git. 
+
+git remote -v      # this will show the origin and push destination. 
+
+#This will change the origin
+git remote set-url --add --push origin git-repository-name
+
