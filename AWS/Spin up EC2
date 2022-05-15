@@ -1,0 +1,23 @@
+#Spin up EC2 from scratch. Must install AWS CLI and AWS configure your CLI
+aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
+
+
+aws ec2 describe-instances --filters "Name=instance-type,Values=t2.micro" --query "Reservations[].Instances[].InstanceId"
+
+ami-0fa49cc9dc8d62c84
+aws ec2 terminate-instances --instance-ids i-5203422c
+
+
+
+aws ec2 run-instances --image-id ami-0fa49cc9dc8d62c84 --instance-type t2.micro --dry-run
+
+aws confif --profile Joe
+
+aws ec2 run-instances --image-id ami-0fa49cc9dc8d62c84 --instance-type t2.micro --dry-run --profile Joe
+
+aws sts decode-authorization-message --encoded-message 1oAkwKWTKvlwx0LzPSBpk
+echo "DecodedMessage": "{\"allowed\":false,\"
+
+
+
+
