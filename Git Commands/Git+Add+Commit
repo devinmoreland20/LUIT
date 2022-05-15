@@ -1,0 +1,8 @@
+#To add updates to the staging area
+
+
+git add <filename>
+git add -A           #adds multiple files at once to the staging area. 
+
+git commit -m "reason for addition"          # will commit it to the repo
+git commit -a -m "reason for addition"       #will both add and commit, sometimes it doesnt work though.
