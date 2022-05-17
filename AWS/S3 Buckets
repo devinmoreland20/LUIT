@@ -1,0 +1,5 @@
+#To create a bucket make sure your AWS CLI is configured. 
+aws s3api create-bucket --bucket levelup2022 --region us-east-1
+#to see bucket
+aws s3 ls
+
