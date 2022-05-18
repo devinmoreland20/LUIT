@@ -1,0 +1,3 @@
+installs the NPM onto powershell  whatever npm is
+
+choco install npm
