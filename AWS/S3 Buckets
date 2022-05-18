@@ -3,3 +3,22 @@ aws s3api create-bucket --bucket levelup2022 --region us-east-1
 #to see bucket
 aws s3 ls
 
+#enable website hosting
+aws s3 website s3://my-bucket/ --index-document index.html --error-document error.html
+
+apply a bucket policy
+aws s3api put-bucket-policy --bucket MyBucket --policy file://policy.json
+
+
+
+#open wed page to public policy
+{
+  "Version":"2012-10-17",
+  "Statement":[{
+     "Sid":"PublicReadGetObject",
+     "Effect":"Allow",
+     "Principal": "*",
+     "Action":["s3:GetObject"],
+     "Resource":["arn:aws:s3:::arn:aws:s3:::levelup2022/*"]
+  }]
+}
