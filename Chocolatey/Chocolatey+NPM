@@ -1,3 +1,3 @@
-installs the NPM onto powershell  whatever npm is
+installs the NPM onto powershell  whatever npm is, you need to install nodejs and you will be good to see the modules that he is showing. 
 
-choco install npm
+choco install nodejs
