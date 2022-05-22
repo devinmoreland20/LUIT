@@ -1,0 +1,4 @@
+#installs the aws ecs cli
+
+
+choco install ecs-cli
