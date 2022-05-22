@@ -1,0 +1,13 @@
+#configure cluster
+ecs-cli configure --cluster my-ec2-cluster --default-launch-type EC2 --config-name ec2-lesson --region ap-southeast-1
+
+
+#Configure profile with accesskey and secret key
+ecs-cli configure profile --access-key *************8 --secret-key ******** --profile-name ec2-lesson-profile
+
+#Creates Stack
+ecs-cli up --keypair East1AKP --capability-iam --size 2 --instance-type t2.micro --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
+
+
+
+
