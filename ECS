@@ -10,4 +10,20 @@ ecs-cli up --keypair East1AKP --capability-iam --size 2 --instance-type t2.micro
 
 
 
+ecs-cli compose up --create-log-groups --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
 
+
+
+#shows our resources in ecs
+ecs-cli ps --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
+
+
+
+#sclea cluster
+ecs-cli compose scale 2 --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
+
+
+ecs-cli compose service rm --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
+
+
+ecs-cli down --force --cluster-config ec2-lesson --ecs-profile ec2-lesson-profile
