@@ -1,0 +1,18 @@
+aws sqs help
+
+aws sqs list-queues
+
+
+
+awa sqs send-message
+
+
+     send-message --queue-url <value> --message-body <value> [--delay-seconds <value>]
+     
+     
+     
+     aws sqs receive-message --queue-url --wait-time-seconds 0
+     
+     aws sqs send-message --queue-url "https://sqs.us-east-1.amazonaws.com/617683747990/MyQueue" --message-body short-polling
+     
+     aws sqs receive-message --queue-url "https://sqs.us-east-1.amazonaws.com/617683747990/MyQueue" --wait-time-seconds 0
