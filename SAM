@@ -1,0 +1,13 @@
+sam init
+
+sam build
+
+sam invoke <function name>
+
+sam deploy --guided
+
+
+sam package --template .\template.yaml --s3-bucket planets0223 --output-template-file packaged-template.yaml
+
+
+aws cloudformation delete-stack --stack-name  sam-app-test
