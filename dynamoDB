@@ -1,0 +1,9 @@
+#add multiple items via a json file. 
+aws dynamodb put-item --table-name Federation --item file://Planets.json
+
+
+#aDDING ITEM VIA PUT-ITEM, ONE ITEM AT A TIME. 
+aws dynamodb put-item --table-name Federation --item '{"Name": {"S": "Vulcan"},"Quadrant": {"S": "Alpha"}}'
+
+
+
